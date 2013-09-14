@@ -1,0 +1,23 @@
+extends ../../../layout
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/main.js')
+	//- script(type='text/javascript', src='/scripts/masonry.pkgd.min.js')
+
+block content_right
+
+block content
+	a.back_link(href='/auth') < Назад
+	.title СПИСОК УЧАСТНИКОВ
+	br
+	each member in members
+		a(href='#')= 'удалить '
+		||&nbsp;
+		a(href='/auth/edit/members/' + member._id)= member.ru.name
+		b= ' ---> '
+		a(href='/member/' + member._id, target='_blank') результат
+		br
+		br

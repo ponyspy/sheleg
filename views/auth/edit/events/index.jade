@@ -1,0 +1,34 @@
+extends ../../../layout
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/main.js')
+	//- script(type='text/javascript', src='/scripts/masonry.pkgd.min.js')
+
+block content_right
+
+block content
+	a.back_link(href='/auth') < Назад
+	.title СПИСОК СОБЫТИЙ
+	br
+	each e in event
+		a(href='#')= 'удалить '
+		||&nbsp;
+		a(href='/auth/edit/events/' + e._id)= e.ru.title
+		b= ' ---> '
+		a(href='/event/' + e._id, target='_blank') результат
+		br
+		br
+		//- each member in e.members
+		//- 	if (member.c_status == 'director')
+		//- 		b режисер
+		//- 		br
+		//- 		a(href='/auth/edit/members/' + member.m_id._id)= member.m_id.ru.name
+		//- 		br
+		//- 	if (member.c_status == 'playwright')
+		//- 		b драматург
+		//- 		br
+		//- 		a(href='/auth/edit/members/' + member.m_id._id)= member.m_id.ru.name
+		//- 		br

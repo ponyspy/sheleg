@@ -1,0 +1,27 @@
+extends ../layout
+
+block title
+	title НАШИ РАБОТЫ
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/works.css' + version)
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/works.js' + version)
+
+block content
+	.content_menu_block
+		a.content_menu_item(href='/works/design') ГРАФИЧЕСКИЙ ДИЗАЙН
+		a.content_menu_item(href='/works/graphic') ГРАФИКА
+		a.content_menu_item(href='/works/art') ЖИВОПИСЬ
+		a.up(href='/works/art') СДЕЛАТЬ ЗАКАЗ
+	.content_images_block
+		.content_images_item
+		.content_images_item
+		.content_images_item
+		.content_images_item
+		.content_images_item
+		.content_images_item
+	.content_preview_block
+		.preview_image
+		.preview_description

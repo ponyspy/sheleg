@@ -1,0 +1,26 @@
+extends ../../layout
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/add.js')
+
+block content
+	.form_block
+		a.back_link(href='/auth') < Назад
+		.title ДОБАВИТЬ РАБОТУ
+		form(action="/auth/add/work", method="post", enctype="multipart/form-data")
+			.form_title Описание:
+			textarea.ru(name="ru[description]", rows="8",)
+			textarea.en(name="en[description]", rows="8", disabled)
+			.form_title Фото:
+			input(type="file", name="photo")
+			.form_title Категория:
+			select(name='tag')
+				option(value='design') графический дизайн
+				option(value='graphic') графика
+				option(value='art') живопись
+			br
+			input(type='button', class='toggle_eng', value='Перевод')
+			input(type="submit", value="Добавить")

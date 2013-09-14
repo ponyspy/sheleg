@@ -1,0 +1,37 @@
+extends ../layout
+
+block title
+	title СУПЕР САЙТ ДЛЯ ШЕЛЕГ
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/index.css' + version)
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/main.js' + version)
+
+block content
+	.main_menu_block
+		.main_menu_item НАШИ РАБОТЫ
+			.main_menu_drop.works
+				a(href='/works/design').main_menu_drop_item ГРАФИЧЕСКИЙ ДИЗАЙН
+				br
+				a(href='/works/graphic').main_menu_drop_item ГРАФИКА
+				br
+				a(href='/works/art').main_menu_drop_item ЖИВОПИСЬ
+		.main_menu_item ПРОЕКТЫ
+			.main_menu_drop.projects
+				a(href='/projects/cards').main_menu_drop_item ОТКРЫТКИ
+		.main_menu_item НАШ БЛОГ
+			.main_menu_drop.blog
+				a(href='/blog/design').main_menu_drop_item ДИЗАЙН
+				br
+				a(href='/blog/art').main_menu_drop_item ИССКУСТВО И ФОТОГРАФИЯ
+				br
+				a(href='/blog/architecture').main_menu_drop_item АРХИТЕКТУРА
+		.main_menu_item ИНТЕРНЕТ МАГАЗИН
+			.main_menu_drop.shop
+				a(href='/shop/design').main_menu_drop_item ДИЗАЙН
+				br
+				a(href='/shop/art').main_menu_drop_item ИССКУСТВО И ФОТОГРАФИЯ
+				br
+				a(href='/shop/architecture').main_menu_drop_item АРХИТЕКТУРА

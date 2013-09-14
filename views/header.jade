@@ -1,0 +1,10 @@
+- var version = '?ver=1'
+meta(charset="utf-8")
+block title
+link(rel='stylesheet', type='text/css', href='/styles/main.css' + version)
+block content_style
+	- var version = '?ver=1'
+script(type='text/javascript', src='/scripts/jquery.js' + version)
+script(type='text/javascript', src='/scripts/global.js' + version)
+block content_scripts
+	- var version = '?ver=1'

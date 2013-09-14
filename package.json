@@ -1,0 +1,20 @@
+{
+  "name": "sheleg",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "express": "~3.4.0",
+    "jade": "~0.35.0",
+    "mongoose": "~3.6.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD"
+}

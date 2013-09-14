@@ -1,0 +1,34 @@
+extends ../../layout
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/add.js')
+
+block content
+	.form_block
+		a.back_link(href='/auth') < Назад
+		.title ДОБАВИТЬ ПРОЕКТ
+		form(action="/auth/add/post", method="post", enctype="multipart/form-data")
+			.form_title Заголовок:
+			input.ru(type="text", name="ru[title]",)
+			input.en(type="text", name="en[title]", disabled)
+			.form_title Подзаголовок:
+			input.ru(type="text", name="ru[s_title]",)
+			input.en(type="text", name="en[s_title]", disabled)
+			.form_title Описание:
+			textarea.ru(name="ru[body]", rows="8",)
+			textarea.en(name="en[body]", rows="8", disabled)
+			.form_title Фото 1:
+			input(type="file", name="photo")
+			.form_title Фото 2:
+			input(type="file", name="photo")
+			.form_title Категория:
+			select(name='tag')
+				option(value='design') дизайн
+				option(value='art') исскуство и фотография
+				option(value='architecture') архитектура
+			br
+			input(type='button', class='toggle_eng', value='Перевод')
+			input(type="submit", value="Добавить")

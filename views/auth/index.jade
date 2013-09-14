@@ -1,0 +1,28 @@
+extends ../layout
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content
+	a.back_link(href='/logout') Выход
+	.title ЗВЕЗДОЧЕТ
+	br
+	b Работы:
+	br
+	a(href='/auth/add/work')= ' добавить '
+	||
+	a(href='/auth/edit/works')= ' редактировать'
+	br
+	br
+	b Проекты:
+	br
+	a(href='/auth/add/project')= ' добавить '
+	||
+	a(href='/auth/edit/projects')= ' редактировать'
+	br
+	br
+	b Блог:
+	br
+	a(href='/auth/add/post')= ' добавить '
+	||
+	a(href='/auth/edit/posts')= ' редактировать'
