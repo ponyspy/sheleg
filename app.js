@@ -1,4 +1,5 @@
 var fs = require('fs');
+var async = require('async');
 var express = require('express');
     var app = express();
 
@@ -107,15 +108,24 @@ function checkAuth (req, res, next) {
 
 
 app.get('/', function(req, res) {
-  res.render('index');
+  Project.find().exec(function(err, projects) {
+    res.render('index', {projects: projects});
+  });
 });
 
-app.get('/works/:type', function(req, res) {
-  res.render('works');
+app.get('/works/:tag', function(req, res) {
+  var tag = req.params.tag;
+  Work.find({'tag': tag}).exec(function(err, works) {
+    res.render('works', {works: works});
+  });
 });
 
-app.get('/works/:type/:id', function(req, res) {
-  res.render('works/work.jade');
+app.post('/works', function(req, res) {
+  var id = req.body.id;
+
+  Work.findById(id, function(err, work) {
+    res.send(work.ru.description)
+  });
 });
 
 app.get('/projects/:type', function(req, res) {
@@ -149,7 +159,7 @@ app.post('/auth/add/work', function (req, res) {
   fs.readFile(files.photo.path, function (err, data) {
     var newPath = __dirname + '/public/images/works/' + work._id + '.jpg';
     fs.writeFile(newPath, data, function (err) {
-      work.image = '/images/work/' + work._id + '.jpg';
+      work.image = '/images/works/' + work._id + '.jpg';
       work.save(function() {
         fs.unlink(files.photo.path);
         res.redirect('back');
@@ -169,23 +179,30 @@ app.post('/auth/add/project', function (req, res) {
 
   project.tag = post.tag;
   project.ru.title = post.ru.title;
-  project.ru.s_title = post.ru.s_title;
   project.ru.description = post.ru.description;
 
   if (post.en) {
     project.en.title = post.en.title;
-    project.en.s_title = post.en.s_title;
     project.en.description = post.en.description;
   }
 
-  fs.readFile(files.photo.path, function (err, data) {
-    var newPath = __dirname + '/public/images/project/' + work._id + '.jpg';
-    fs.writeFile(newPath, data, function (err) {
-      work.image = '/images/work/' + work._id + '.jpg';
-      work.save(function() {
-        fs.unlink(files.photo.path);
-        res.redirect('back');
+  for (var i in files.photo) {
+    files.photo[i].name = i;
+  }
+
+  async.forEach(files.photo, function(photo, callback) {
+    fs.readFile(photo.path, function (err, data) {
+      fs.mkdir(__dirname + '/public/images/projects/' + project._id, function() {
+        var newPath = __dirname + '/public/images/projects/' + project._id + '/' + photo.name + '.jpg';
+        fs.writeFile(newPath, data, function (err) {
+          project.images.push('/images/projects/' + project._id + '/' + photo.name + '.jpg');
+          callback();
+        });
       })
+    });
+  }, function() {
+    project.save(function() {
+      res.redirect('back');
     });
   });
 });
@@ -193,6 +210,45 @@ app.post('/auth/add/project', function (req, res) {
 
 app.get('/auth/add/post', checkAuth, function (req, res) {
   res.render('auth/add/post.jade');
+});
+
+app.post('/auth/add/post', function (req, res) {
+  var post = req.body;
+  var files = req.files;
+  var b_post = new Post();
+
+  b_post.tag = post.tag;
+  b_post.author = req.session.user_id;
+
+  b_post.ru.title = post.ru.title;
+  b_post.ru.s_title = post.ru.s_title;
+  b_post.ru.body = post.ru.body;
+
+  if (post.en) {
+    b_post.en.title = post.en.title;
+    b_post.en.s_title = post.en.s_title;
+    b_post.en.body = post.en.body;
+  }
+
+  for (var i in files.photo) {
+    files.photo[i].name = i;
+  }
+
+  async.forEach(files.photo, function(photo, callback) {
+    fs.readFile(photo.path, function (err, data) {
+      fs.mkdir(__dirname + '/public/images/posts/' + b_post._id, function() {
+        var newPath = __dirname + '/public/images/posts/' + b_post._id + '/' + photo.name + '.jpg';
+        fs.writeFile(newPath, data, function (err) {
+          b_post.images.push('/images/posts/' + b_post._id + '/' + photo.name + '.jpg');
+          callback();
+        });
+      })
+    });
+  }, function() {
+    b_post.save(function() {
+      res.redirect('back');
+    });
+  });
 });
 
 

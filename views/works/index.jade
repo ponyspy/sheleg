@@ -14,14 +14,10 @@ block content
 		a.content_menu_item(href='/works/design') ГРАФИЧЕСКИЙ ДИЗАЙН
 		a.content_menu_item(href='/works/graphic') ГРАФИКА
 		a.content_menu_item(href='/works/art') ЖИВОПИСЬ
-		a.up(href='/works/art') СДЕЛАТЬ ЗАКАЗ
+		a.up(href='#') СДЕЛАТЬ ЗАКАЗ
 	.content_images_block
-		.content_images_item
-		.content_images_item
-		.content_images_item
-		.content_images_item
-		.content_images_item
-		.content_images_item
+		each work in works
+			img.content_images_item(src=work.image, id=work._id)
 	.content_preview_block
-		.preview_image
+		img.preview_image
 		.preview_description

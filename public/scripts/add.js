@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	var eng = true;
+	var count = 0;
 
 	function toggleEnglish () {
 		if (eng = !eng) {
@@ -15,16 +16,25 @@ $(document).ready(function() {
 	}
 
 	function snakeForward () {
-		var elem = $(this).parent().find('select');
-		elem.first().clone().insertAfter(elem.last())
+		count +=1;
+
+		var elem = $('.snake');
+		elem.first().clone().insertAfter(elem.last());
+
+		var forms = $('.snake').eq(count).children('select, input');
+		forms.each(function() {
+			var value = $(this).attr('name');
+			value = value.replace('0', count);
+			$(this).attr('name', value);
+		});
 	}
 
 	function snakeBack () {
-		if ($(this).parent().find('select').size() == 1) return null;
-		$(this).parent().find('select :last').remove();
+		if ($('.snake').size() == 1) return null;
+		$('.snake').last().remove();
 	}
 
-	$('.back').on('click', snakeBack);
-	$('.forward').on('click', snakeForward);
+	$('.plus').on('click', snakeBack);
+	$('.minus').on('click', snakeForward);
 	$('.toggle_eng').on('click', toggleEnglish);
 });

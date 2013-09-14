@@ -9,7 +9,7 @@ block content_scripts
 block content
 	.form_block
 		a.back_link(href='/auth') < Назад
-		.title ДОБАВИТЬ ПРОЕКТ
+		.title ДОБАВИТЬ ПОСТ
 		form(action="/auth/add/post", method="post", enctype="multipart/form-data")
 			.form_title Заголовок:
 			input.ru(type="text", name="ru[title]",)
@@ -20,10 +20,10 @@ block content
 			.form_title Описание:
 			textarea.ru(name="ru[body]", rows="8",)
 			textarea.en(name="en[body]", rows="8", disabled)
-			.form_title Фото 1:
-			input(type="file", name="photo")
-			.form_title Фото 2:
-			input(type="file", name="photo")
+			.snake
+				input(type="file", name="photo")
+			input.plus(type="button", value="-")
+			input.minus(type="button", value="+")
 			.form_title Категория:
 			select(name='tag')
 				option(value='design') дизайн
