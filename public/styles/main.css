@@ -14,13 +14,14 @@ a:hover {
 }
 
 .main_block {
-	width: 870px;
+	width: 1070px;
 	border: 1px solid black;
 }
 
 .main_block {
 	padding: 30px;
 	background-image: url(/images/design/gridinator.png);
+	margin: 0 auto;
 }
 
 .logo_block {
