@@ -115,6 +115,7 @@ app.get('/', function(req, res) {
 
 app.get('/works/:tag', function(req, res) {
   var tag = req.params.tag;
+
   Work.find({'tag': tag}).exec(function(err, works) {
     res.render('works', {works: works});
   });
@@ -128,8 +129,42 @@ app.post('/works', function(req, res) {
   });
 });
 
-app.get('/projects/:type', function(req, res) {
-  res.render('project');
+app.get('/project/:id', function(req, res) {
+  var id = req.params.id;
+
+  Project.findById(id ,function(err, project) {
+    res.render('project', {project: project});
+  });
+});
+
+app.get('/blog/:tag', function(req, res) {
+  var tag = req.params.tag;
+
+  Post.find({'tag': tag}).exec(function(err, posts) {
+    res.render('blog', {posts: posts});
+  });
+});
+
+
+// ------------------------
+// *** Static Block ***
+// ------------------------
+
+
+app.get('/about', function(req, res) {
+  res.render('static/about.jade');
+});
+
+app.get('/services', function(req, res) {
+  res.render('static/services.jade');
+});
+
+app.get('/concept', function(req, res) {
+  res.render('static/concept.jade');
+});
+
+app.get('/contacts', function(req, res) {
+  res.render('static/contacts.jade');
 });
 
 
