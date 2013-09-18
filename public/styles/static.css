@@ -1,0 +1,56 @@
+.content_block {
+	overflow: hidden;
+}
+
+.content_title_block {
+	width: 100%;
+	/*border: 1px solid red;*/
+	border-bottom: 2px;
+	border-color: red;
+}
+
+.select_block {
+	width: 200px;
+	height: 400px;
+	float: left;
+	margin-right: 15px;
+	border: 1px solid black;
+}
+
+.service_block {
+	width: 630px;
+	height: 400px;
+	float: left;
+	border: 1px solid black;
+}
+
+.image {
+	width: 410px;
+	height: 300px;
+	margin-right: 15px;
+	float: left;
+	background-color: #b05243
+}
+
+.about {
+	width: 200px;
+	height: 50px;
+	float: left;
+	background-color: #4c6db0
+}
+
+.terms {
+	width: 200px;
+	height: 50px;
+	margin-top: 130px;
+	float: left;
+	background-color: #4c6db0
+}
+
+.price {
+	width: 200px;
+	height: 50px;
+	margin-top: 20px;
+	float: left;
+	background-color: #4c6db0
+}
