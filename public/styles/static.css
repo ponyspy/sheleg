@@ -9,26 +9,9 @@
 	border-color: red;
 }
 
-.select_block {
-	width: 200px;
-	height: 400px;
-	float: left;
-	margin-right: 15px;
-	border: 1px solid black;
-}
-
-.service_block {
-	width: 840px;
-	min-height: 400px;
-	float: left;
-	border: 1px solid black;
-}
-
 .image {
-	width: 625px;
+	width: 630px;
 	height: 500px;
-	margin-right: 15px;
-	float: left;
 	background-color: #b05243
 }
 
@@ -42,7 +25,7 @@
 .terms {
 	width: 200px;
 	height: 50px;
-	margin-top: 130px;
+	margin-top: 310px;
 	float: left;
 	background-color: #4c6db0
 }
@@ -53,4 +36,30 @@
 	margin-top: 20px;
 	float: left;
 	background-color: #4c6db0
+}
+
+.content_left_block {
+	width: 200px;
+	float: left;
+	margin-right: 15px;
+	background-color: #40a9b0;
+}
+
+.content_main_block  {
+	width: 630px;
+	float: left;
+	margin-right: 15px;
+}
+
+.content_right_block {
+	width: 200px;
+	float: left;
+}
+
+.content_bottom_block {
+	width: 845px;
+	margin-left: 215px;
+	min-height: 150px;
+	background-color: #7cb069;
+	clear: both;
 }
