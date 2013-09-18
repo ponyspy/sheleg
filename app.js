@@ -155,8 +155,8 @@ app.get('/about', function(req, res) {
   res.render('static/about.jade');
 });
 
-app.get('/services', function(req, res) {
-  res.render('static/services.jade');
+app.get('/srvices', function(req, res) {
+  res.render('static/srvices.jade');
 });
 
 app.get('/concept', function(req, res) {
