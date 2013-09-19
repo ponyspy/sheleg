@@ -4,11 +4,21 @@ block title
 	title НАШИ БЛОГ
 
 block content_style
-	link(rel='stylesheet', type='text/css', href='/styles/blog.css' + version)
+	link(rel='stylesheet', type='text/css', href='/styles/works.css' + version)
 
 block content_scripts
 	script(type='text/javascript', src='/scripts/blog.js' + version)
 
 block content
-	h1 Hi!
-	b= posts
+	.content_menu_block
+		a.content_menu_item(href='/blog/design') ДИЗАЙН
+		a.content_menu_item(href='/blog/art') ИССКУСТВО И ФОТОГРАФИЯ
+		a.content_menu_item(href='/blog/architecture') АРХИТЕКТУРА
+		a.up(href='#') ПОДПИСАТЬСЯ
+	.content_images_block
+		each post in posts
+			a(href='/post/' + post._id)
+				img.content_images_item(src=post.images[0], id=post._id)
+	.content_preview_block
+		img.preview_image
+		.preview_description

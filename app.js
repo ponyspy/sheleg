@@ -68,11 +68,13 @@ var postSchema = new Schema({
     ru: {
       title: String,
       s_title: String,
+      quote: String,
       body: String
     },
     en: {
       title: String,
       s_title: String,
+      quote: String,
       body: String
     },
     tag: String,
@@ -145,6 +147,16 @@ app.get('/blog/:tag', function(req, res) {
   });
 });
 
+app.get('/post/:id', function(req, res) {
+  var id = req.params.id;
+
+  Post.findById(id, function(err, post) {
+    Post.find({'tag':post.tag}).sort('-date').limit(6).exec(function(err, r_posts) {
+      res.render('blog/post.jade', {post: post, r_posts: r_posts});
+    });
+  });
+});
+
 
 // ------------------------
 // *** Static Block ***
@@ -214,10 +226,12 @@ app.post('/auth/add/project', function (req, res) {
 
   project.tag = post.tag;
   project.ru.title = post.ru.title;
+  project.ru.s_title = post.ru.s_title;
   project.ru.description = post.ru.description;
 
   if (post.en) {
     project.en.title = post.en.title;
+    project.en.s_title = post.en.s_title;
     project.en.description = post.en.description;
   }
 
@@ -257,11 +271,13 @@ app.post('/auth/add/post', function (req, res) {
 
   b_post.ru.title = post.ru.title;
   b_post.ru.s_title = post.ru.s_title;
+  b_post.ru.quote = post.ru.quote;
   b_post.ru.body = post.ru.body;
 
   if (post.en) {
     b_post.en.title = post.en.title;
     b_post.en.s_title = post.en.s_title;
+    b_post.en.quote = post.en.quote;
     b_post.en.body = post.en.body;
   }
 

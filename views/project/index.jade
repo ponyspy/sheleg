@@ -10,5 +10,14 @@ block content_scripts
 	script(type='text/javascript', src='/scripts/project.js' + version)
 
 block content
-	h1 Привет!
-	b= project
+	.content_menu_block
+		.content_menu_item= project.ru.title.toUpperCase()
+		a.up(href='#') СДЕЛАТЬ ЗАКАЗ
+	.project_body_block
+		img.project_preview_block
+		.project_description_block
+			.s_title= project.ru.s_title
+			.description= project.ru.description
+	.project_images_block
+		each image in project.images
+			img.image(src=image)

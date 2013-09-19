@@ -1,0 +1,46 @@
+.content_block {
+	overflow: hidden;
+}
+
+.content_menu_block {
+	overflow: hidden;
+	/*border: 1px solid black;*/
+}
+
+.content_menu_item {
+	width: 200px;
+	float: left;
+	margin-right: 15px;
+	/*border: 1px solid black;*/
+}
+
+.up {
+	float: right;
+}
+
+.project_body_block {
+	margin-top: 15px;
+	width: 630px;
+	float: left;
+	margin-right: 15px;
+	background-color: #b09640;
+}
+
+.project_preview_block {
+	display: none;
+	width: 630px;
+	cursor: pointer;
+}
+
+.project_images_block {
+	margin-top: 15px;
+	width: 415px;
+	float: left;
+	background-color: #b06287;
+}
+
+.image {
+	width: 200px;
+	float: left;
+	cursor: pointer;
+}

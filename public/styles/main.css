@@ -2,6 +2,10 @@ a {
 	text-decoration: none;
 }
 
+img {
+	display: block;
+}
+
 a:hover {
 	text-decoration: underline;
 }
@@ -14,8 +18,8 @@ a:hover {
 }
 
 .main_block {
-	width: 1070px;
-	border: 1px solid black;
+	width: 1060px;
+	/*border: 1px solid black;*/
 }
 
 .main_block {
@@ -49,5 +53,5 @@ a:hover {
 .content_block {
 	margin-top: 300px;
 	clear: both;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
