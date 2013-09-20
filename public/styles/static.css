@@ -6,11 +6,13 @@
 	width: 100%;
 	border-bottom: 2px;
 	border-color: red;
+	border-bottom: 2px solid black;
 }
 
 .image {
 	width: 630px;
 	height: 500px;
+	margin-top: 15px;
 	background-color: #b05243;
 	display: none;
 }
@@ -44,6 +46,7 @@
 
 .content_left_block {
 	width: 200px;
+	margin-top: 15px;
 	float: left;
 	margin-right: 15px;
 	background-color: #40a9b0;
@@ -57,11 +60,12 @@
 
 .content_right_block {
 	width: 200px;
+	margin-top: 15px;
 	float: left;
 }
 
 .content_bottom_block {
-	padding-top: 20px;
+	padding-top: 15px;
 	width: 845px;
 	margin-left: 215px;
 	min-height: 150px;

@@ -4,7 +4,7 @@
 
 .content_menu_block {
 	overflow: hidden;
-	/*border: 1px solid black;*/
+	border-bottom: 2px solid black;
 }
 
 .content_menu_item {

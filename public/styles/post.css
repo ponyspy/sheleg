@@ -4,7 +4,8 @@
 
 .content_menu_block {
 	overflow: hidden;
-	/*border: 1px solid black;*/
+	font-size: 14px;
+	border-bottom: 2px solid black;
 }
 
 .content_menu_item {
@@ -20,12 +21,14 @@
 
 .content_images_block {
 	width: 200px;
+	margin-top: 15px;
 	margin-right: 15px;
 	float: left;
 	/*border: 1px solid black;*/
 }
 
 .content_body_block {
+	margin-top: 15px;
 	width: 630px;
 	background-color: #23b094;
 	float: left;
@@ -34,12 +37,13 @@
 
 .image_preview {
 	width: 630px;
-	height: 500px;
+	/*height: 500px;*/
 	display: none;
 	cursor: pointer;
 }
 
 .content_related_block {
+	margin-top: 15px;
 	width: 200px;
 	float: left;
 }
@@ -50,7 +54,7 @@
 
 .image {
 	width: 200px;
-	margin-top: 10px;
+	margin-bottom: 10px;
 	cursor: pointer;
 }
 

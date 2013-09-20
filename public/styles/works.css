@@ -1,6 +1,6 @@
 .content_menu_block {
 	overflow: hidden;
-	/*border: 1px solid black;*/
+	border-bottom: 2px solid black;
 }
 
 .content_menu_item {
@@ -16,7 +16,7 @@
 
 .content_images_item {
 	width: 200px;
-	height: 150px;
+	/*height: 150px;*/
 	margin-top: 15px;
 	margin-right: 15px;
 	float: left;
