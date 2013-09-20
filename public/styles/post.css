@@ -38,6 +38,7 @@
 .image_preview {
 	width: 630px;
 	/*height: 500px;*/
+	position: fixed;
 	display: none;
 	cursor: pointer;
 }
