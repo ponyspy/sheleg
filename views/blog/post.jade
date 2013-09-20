@@ -28,5 +28,5 @@ block content
 	.content_related_block
 		.r_title похожие
 		each r_post in r_posts
-			a(href='/post/' + r_post._id)
-				img.r_post(src=r_post.images[0])
+				a.r_post(href='/post/' + r_post._id)
+					img.r_post_img(src=r_post.images[0])

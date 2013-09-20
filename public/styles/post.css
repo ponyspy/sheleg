@@ -4,7 +4,7 @@
 
 .content_menu_block {
 	overflow: hidden;
-	font-size: 14px;
+	/*font-size: 14px;*/
 	border-bottom: 2px solid black;
 }
 
@@ -38,8 +38,13 @@
 .image_preview {
 	width: 630px;
 	/*height: 500px;*/
-	position: fixed;
 	display: none;
+	cursor: pointer;
+}
+
+.image {
+	width: 200px;
+	margin-bottom: 10px;
 	cursor: pointer;
 }
 
@@ -49,19 +54,23 @@
 	float: left;
 }
 
-.content_related_block:nth-child(even) {
+.r_post:nth-child(2n) {
+	float: right;
 	margin-right: 0px;
 }
 
-.image {
-	width: 200px;
-	margin-bottom: 10px;
+.r_post {
+	width: 95px;
+	display: inline-block;
+	float: left;
 	cursor: pointer;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
-.r_post {
-	width: 90px;
-	float: left;
-	margin-top: 10px;
-	margin-right: 10px;
+.r_post_img {
+	width: 95px;
+	/*float: left;*/
+	/*margin-bottom: 10px;*/
+	/*margin-right: 10px;*/
 }

@@ -39,8 +39,16 @@
 	background-color: #b06287;
 }
 
+.image:nth-child(2n) {
+	float: right;
+	margin-right: 0px;
+}
+
 .image {
 	width: 200px;
+	display: inline-block;
 	float: left;
 	cursor: pointer;
+	margin-right: 15px;
+	margin-bottom: 10px;
 }

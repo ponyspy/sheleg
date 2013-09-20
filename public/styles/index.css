@@ -10,9 +10,15 @@
 	float: left;
 }
 
+.main_menu_block:hover {
+	border-bottom: 2px solid red;
+}
+
 .main_menu_drop {
+	width: 190px;
+	padding: 5px;
 	display: none;
-	margin-top: 2px;
+	/*margin-top: 2px;*/
 	position: absolute;
 }
 
