@@ -11,7 +11,7 @@ block content_scripts
 
 block content
 	.main_menu_block
-		.main_menu_item НАШИ РАБОТЫ
+		.main_menu_item РАБОТЫ
 			.main_menu_drop.works
 				a(href='/works/design').main_menu_drop_item ГРАФИЧЕСКИЙ ДИЗАЙН
 				br
@@ -23,7 +23,7 @@ block content
 				each project in projects
 					a(href='/project/' + project._id).main_menu_drop_item= project.ru.title.toUpperCase()
 					br
-		.main_menu_item НАШ БЛОГ
+		.main_menu_item БЛОГ
 			.main_menu_drop.blog
 				a(href='/blog/design').main_menu_drop_item ДИЗАЙН
 				br
