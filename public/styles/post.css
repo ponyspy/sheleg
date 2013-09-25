@@ -5,7 +5,7 @@
 .content_menu_block {
 	overflow: hidden;
 	/*font-size: 14px;*/
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #ff7500;
 }
 
 .content_menu_item {

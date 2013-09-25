@@ -7,11 +7,8 @@
 	width: 200px;
 	/*height: 60px;*/
 	margin-right: 15px;
+	cursor: default;
 	float: left;
-}
-
-.main_menu_block:hover {
-	border-bottom: 2px solid red;
 }
 
 .main_menu_drop {
@@ -20,6 +17,11 @@
 	display: none;
 	/*margin-top: 2px;*/
 	position: absolute;
+}
+
+.main_menu_drop a {
+	color: white;
+	font-size: 10pt;
 }
 
 .works {
