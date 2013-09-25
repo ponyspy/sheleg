@@ -65,14 +65,24 @@ a:hover {
 }
 
 .social_block {
-	width: 150px;
-	height: 150px;
+	/*width: 150px;*/
+	/*height: 150px;*/
 	float: right;
 	border: 1px solid black;
 }
 
+.social_block a {
+	display: black;
+	float: left;
+	margin-right: 15px;
+}
+
+.social_block img {
+	width: 30px;
+}
+
 .content_block {
-	margin-top: 350px;
+	margin-top: 250px;
 	clear: both;
 	/*border: 1px solid black;*/
 }

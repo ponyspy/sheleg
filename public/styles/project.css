@@ -5,6 +5,7 @@
 .content_menu_block {
 	overflow: hidden;
 	border-bottom: 2px solid #ff3892;
+	font: 10pt/12pt 'MyraR';
 }
 
 .content_menu_item {
