@@ -7,6 +7,7 @@
 	border-bottom: 2px;
 	border-color: red;
 	border-bottom: 2px solid black;
+	font: 10pt/12pt 'MyraR';
 }
 
 .image {
@@ -18,6 +19,10 @@
 
 .service_block {
 	display: none;
+}
+
+.select_item {
+	font: 10pt/16pt 'MyraR';
 }
 
 .select_item:hover {

@@ -11,29 +11,29 @@ block content_scripts
 
 block content
 	.main_menu_block
-		.main_menu_item РАБОТЫ
+		.main_menu_item работы
 			.main_menu_drop.works
-				a(href='/works/design').main_menu_drop_item ГРАФИЧЕСКИЙ ДИЗАЙН
+				a(href='/works/design').main_menu_drop_item графический дизайн
 				br
-				a(href='/works/graphic').main_menu_drop_item ГРАФИКА
+				a(href='/works/graphic').main_menu_drop_item графика
 				br
-				a(href='/works/art').main_menu_drop_item ЖИВОПИСЬ
-		.main_menu_item ПРОЕКТЫ
+				a(href='/works/art').main_menu_drop_item живопись
+		.main_menu_item проекты
 			.main_menu_drop.projects
 				each project in projects
 					a(href='/project/' + project._id).main_menu_drop_item= project.ru.title.toUpperCase()
 					br
-		.main_menu_item БЛОГ
+		.main_menu_item блог
 			.main_menu_drop.blog
-				a(href='/blog/design').main_menu_drop_item ДИЗАЙН
+				a(href='/blog/design').main_menu_drop_item дизайн
 				br
-				a(href='/blog/art').main_menu_drop_item ИССКУСТВО И ФОТОГРАФИЯ
+				a(href='/blog/art').main_menu_drop_item исскуство и фотография
 				br
-				a(href='/blog/architecture').main_menu_drop_item АРХИТЕКТУРА
-		.main_menu_item ИНТЕРНЕТ МАГАЗИН
+				a(href='/blog/architecture').main_menu_drop_item архитектура
+		.main_menu_item интернет магазин
 			.main_menu_drop.shop
-				a(href='/shop/design').main_menu_drop_item ДИЗАЙН
+				a(href='/shop/design').main_menu_drop_item дизайн
 				br
-				a(href='/shop/art').main_menu_drop_item ИССКУСТВО И ФОТОГРАФИЯ
+				a(href='/shop/art').main_menu_drop_item исскуство и фотография
 				br
-				a(href='/shop/architecture').main_menu_drop_item АРХИТЕКТУРА
+				a(href='/shop/architecture').main_menu_drop_item архитектура

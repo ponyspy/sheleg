@@ -1,5 +1,15 @@
+@font-face {
+	font-family: MyraR;
+	src: url('/fonts/myra_regular.ttf');
+}
+
+@font-face {
+	font-family: MyraL;
+	src: url('/fonts/myra_light.ttf');
+}
+
 body {
-	font-size: 10.5pt;
+	font: 11pt/12pt 'Minion Pro';
 }
 
 a {
@@ -34,7 +44,7 @@ a:hover {
 
 .logo_block {
 	width: 200px;
-	height: 150px;
+	/*height: 150px;*/
 	/*border: 1px solid black;*/
 	float: left;
 }
@@ -42,10 +52,16 @@ a:hover {
 .menu_block {
 	margin-left: 15px;
 	padding-left: 15px;
+	padding-top: 10px;
 	width: 150px;
-	height: 150px;
+	height: 112px;
 	float: left;
 	border-left: 1px solid black;
+	font: 10pt/20pt 'MyraR';
+}
+
+.menu_block a {
+	color: black;
 }
 
 .social_block {

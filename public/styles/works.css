@@ -1,6 +1,11 @@
 .content_menu_block {
 	overflow: hidden;
 	border-bottom: 2px solid #9abb31;
+	font: 10pt/12pt 'MyraR';
+}
+
+.content_menu_block a {
+	color: black;
 }
 
 .content_menu_item {

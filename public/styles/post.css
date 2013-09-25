@@ -4,7 +4,7 @@
 
 .content_menu_block {
 	overflow: hidden;
-	/*font-size: 14px;*/
+	font: 10pt/12pt 'MyraR';
 	border-bottom: 2px solid #ff7500;
 }
 

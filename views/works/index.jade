@@ -1,7 +1,7 @@
 extends ../layout
 
 block title
-	title НАШИ РАБОТЫ
+	title РАБОТЫ
 
 block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/works.css' + version)
@@ -11,10 +11,10 @@ block content_scripts
 
 block content
 	.content_menu_block
-		a.content_menu_item(href='/works/design') ГРАФИЧЕСКИЙ ДИЗАЙН
-		a.content_menu_item(href='/works/graphic') ГРАФИКА
-		a.content_menu_item(href='/works/art') ЖИВОПИСЬ
-		a.up(href='#') СДЕЛАТЬ ЗАКАЗ
+		a.content_menu_item(href='/works/design') графический дизайн
+		a.content_menu_item(href='/works/graphic') графика
+		a.content_menu_item(href='/works/art') живопись
+		a.up(href='#') сделать заказ
 	.content_images_block
 		each work in works
 			img.content_images_item(src=work.image, id=work._id)
